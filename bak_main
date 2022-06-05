@@ -1,0 +1,54 @@
+
+	// START CRUD
+
+	// ========= Create Data =========
+	// book := book.Book{}
+	// book.Title = "Atomic Habits"
+	// book.Description = "Buku self development untuk para developer muda"
+	// book.Price = 75000
+	// book.Rating = 4
+	// book.Discount = 12
+
+	// err = db.Create(&book).Error
+	// if err != nil {
+	// 	fmt.Println("Create data is failed")
+	// }
+
+	// ========= Read Data =========
+	// // var book book.Book
+	// // err = db.First(&book).Error
+	// var books []book.Book
+	// err = db.Find(&books).Error
+	// if err != nil {
+	// 	fmt.Println("Get data is failed")
+	// }
+	// // fmt.Println("Get Book", book)
+
+	// for _, b := range books {
+	// 	fmt.Println("Get Title > ", b.Title)
+	// }
+
+	// ========= Update Data =========
+	// var book book.Book
+	// err = db.Debug().Where("rating = ?", 5).First(&book).Error
+	// if err != nil {
+	// 	fmt.Println("Find data is failed")
+	// }
+	// book.Title = "Mongo DB (Limited Edition)"
+	// err = db.Save(&book).Error
+	// if err != nil {
+	// 	fmt.Println("Update data is failed")
+	// }
+
+	// ========= Delete Data =========
+	var book book.Book
+	err = db.Debug().Where("rating = ?", 5).First(&book).Error
+	if err != nil {
+		fmt.Println("Find data is failed")
+	}
+	err = db.Delete(&book).Error
+	if err != nil {
+		fmt.Println("Update data is failed")
+	}
+
+	// END CRUD
